@@ -1,0 +1,197 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #229652;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1 {
+    color: #2c3e50;
+    margin: 10px 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2#winner {
+    color: #e74c3c;
+    height: 30px;
+    margin: 5px 0;
+    font-size: 1.5rem;
+}
+
+#game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#turn-indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#player-turn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.turn-red {
+    background-color: #e74c3c;
+    animation: pulse 1.5s infinite;
+}
+
+.turn-yellow {
+    background-color: #f1c40f;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#board {
+    height: calc(100vh - 150px);
+    max-height: 540px;
+    width: min(630px, 90vw);
+    background-color: #3498db;
+    border: 10px solid #2980b9;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.tile {
+    height: min(70px, calc((100vh - 200px) / 6 - 10px));
+    width: min(70px, calc(90vw / 7 - 10px));
+    margin: 5px;
+
+    /* Circle */
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid #2980b9;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.tile:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.red-piece {
+    background-color: #e74c3c;
+    box-shadow: inset 0 0 15px #c0392b;
+    animation: dropPiece 0.5s ease-in-out;
+}
+
+.yellow-piece {
+    background-color: #f1c40f;
+    box-shadow: inset 0 0 15px #f39c12;
+    animation: dropPiece 0.5s ease-in-out;
+}
+
+@keyframes dropPiece {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-height: 600px) {
+    h1 {
+        font-size: 1.8rem;
+        margin: 5px 0;
+    }
+    
+    h2#winner {
+        font-size: 1.2rem;
+        margin: 3px 0;
+        height: 20px;
+    }
+    
+    #turn-indicator {
+        font-size: 1rem;
+        margin-bottom: 3px;
+    }
+    
+    #player-turn {
+        width: 20px;
+        height: 20px;
+    }
+    
+    #board {
+        height: calc(100vh - 120px);
+        padding: 3px;
+    }
+    
+    .tile {
+        height: min(60px, calc((100vh - 150px) / 6 - 10px));
+        width: min(60px, calc(90vw / 7 - 10px));
+        margin: 3px;
+        border-width: 4px;
+    }
+}
+
+@media (max-height: 450px) {
+    h1 {
+        font-size: 1.5rem;
+        margin: 3px 0;
+    }
+    
+    #game-info {
+        margin-bottom: 5px;
+    }
+    
+    #board {
+        height: calc(100vh - 100px);
+        border-width: 6px;
+    }
+    
+    .tile {
+        height: min(50px, calc((100vh - 120px) / 6 - 6px));
+        width: min(50px, calc(90vw / 7 - 6px));
+        margin: 2px;
+        border-width: 3px;
+    }
+}
+@media (max-height: 600px) {
+    #reset-btn {
+        margin-top: 8px;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TICTACTOE</title>
+</head>
+<style>
+    *{  
+        padding: 0%;
+        background-color: #9EA3B0;
+        text-align: center;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 95vh;
+    }
+    .game{
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 0.5vmin;
+        width: auto;
+    }
+    .Boxes{
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+        color: #E4C3AD;
+        background-color: #546A7B;
+        border-radius: 2vmin;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rst-btn{
+        text-align: center;
+        border-radius: 0.5rem;
+        margin-top: 20px;
+        width: 150px; 
+        height: 60px; 
+        color: #62929E;
+        font-size: 25px;
+        font-weight: bold;
+        background-color: #C6C5B9;
+        border: none;
+    }
+    .winner-name{
+        color:#FF961F;
+        font-size: 30px;
+        font-weight: bold;
+        height: 40px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>TIC-TAC-TOE</h1>
+        <h1 class="winner-name" id="msg"></h1>
+        <div class="game">
+            <button class="Boxes"></button>
+            <button class="Boxes"></button>
+            <button class="Boxes"></button>
+            <button class="Boxes"></button>
+            <button class="Boxes"></button>
+            <button class="Boxes"></button>
+            <button class="Boxes"></button>
+            <button class="Boxes"></button>
+            <button class="Boxes"></button>
+        </div>
+        <button class="rst-btn">Reset Game</button>
+        <h4>Click on box to start</h4>
+    </div>
+</body>
+<script src="tictac.js"></script>
+</html>

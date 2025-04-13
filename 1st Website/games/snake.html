@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            overflow-x: hidden;
+        }
+        
+        body{
+            background-color: #0A1128;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .game {
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+            width: 80vw;
+            background-color: #DAD7CD;
+            border-radius: 7px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            height: 7%;
+            width: 100%;
+            align-items: center;
+            background-color: #DDA15E;
+            justify-content: space-between;
+        }
+
+        .score {
+            margin-left: 2%;
+        }
+
+        .highscore {
+            margin-right: 2%;
+        }
+
+        .playground {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template: repeat(30, 1fr) / repeat(60, 1fr);
+            gap: 1px; 
+        }
+
+        .food{
+            grid-area: -1/-1 ;
+            background-color: red;
+        }
+
+        .snakehead{
+            grid-area: 0/0;
+            background-color: #588157;
+        }
+
+        .head {
+            background-color: #588157;
+        }
+        
+        .gameStatus{
+            position: absolute;
+            top: 3%;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1 class="gameStatus"></h1>
+        <div class="game">
+            <nav>
+                <h1 class="score">Score:-</h1>
+                <h1 class="highscore">HighScore:-999</h1>
+            </nav>
+            <div class="playground">
+                <!-- <div class="food"></div> -->
+                <!-- <div class="snakehead"></div> -->
+            </div>
+            
+        </div>
+    </div>
+    <script src="snake.js"></script>
+</body>
+</html>

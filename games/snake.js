@@ -10,8 +10,8 @@ let directionX = 0, directionY = 0;
 let gameOver = false;
 
 const changefoodposition = () => {
-    foodX = Math.floor(Math.random() * 60);
-    foodY = Math.floor(Math.random() * 30);
+    foodX = Math.floor(Math.random() * 59);
+    foodY = Math.floor(Math.random() * 29);
 }
 
 const changeDirection = (e) => {

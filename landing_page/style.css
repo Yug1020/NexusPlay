@@ -230,6 +230,7 @@ html {
     object-fit: cover;
     transition: transform 0.6s ease;
     filter: brightness(0.9);
+    object-position: 0% 30%;
 }
 
 #Box2:hover img,
